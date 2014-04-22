@@ -1,0 +1,26 @@
+﻿@model List<Assignment2_7.Models.Topic>
+<header>
+    <link href="~/Content/home.css" rel="stylesheet" />
+</header>
+<div class="leftMenuBottom">
+             <div class="categories">
+                 CATEGORIES
+             </div>
+
+             <ul class="listCategories">
+
+                 <li>
+                     All
+                 </li>
+                @foreach(var topic in Model)
+                {
+                  <li>
+                     @Html.ActionLink(topic.TopicName, "Index", "Book", new {id = topic.TopicID,topicname= topic.TopicName },null)
+                 </li>
+                }
+                 
+
+             </ul>
+
+         </div>
+  

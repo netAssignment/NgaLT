@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Assignment2_7.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+<header>
+    
+    @Styles.Render("~/Content/bookstyle.css")
+</header>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="tablebook">
+    <tr class="headerbook">
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Topic.TopicName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author.AuthorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Topic.TopicName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.AuthorName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookID },null) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookID })
+        </td>
+    </tr>
+}
+
+</table>

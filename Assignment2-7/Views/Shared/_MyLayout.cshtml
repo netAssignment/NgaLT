@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+@using System.Web
+<html>
+<header>
+    @Styles.Render("~/Content/home.css")
+</header>
+
+<body style="background-color: rgb(114, 107, 107);">
+<div class="main">
+    <div id="Header">
+      <div id="Logo"><div id="LogoContainer">
+      </div></div>
+       <br class="Clear">
+    </div>
+ 
+    <div id="Menu">
+        <div style=" margin: auto;text-align: center; margin-left: 500px;">
+            <ul id="nav">
+            <li class="menuNgang">
+                     @{ string a = Session["a"] as string;}
+                @a..........
+               </li>  
+             <li>
+                 @Html.ActionLink("Admin_Manager","Index","ManagerBook")
+                
+            </li>
+             @Html.ActionLink("Home","Index","Home")
+
+           
+            <li>
+             @Html.ActionLink("About","Index")
+                
+           
+            <li>
+                 @Html.ActionLink("Help","Index")
+                
+            </li>
+        </ul>
+        </div>
+        
+            
+       
+    </div>
+       <div class="contain">
+   
+        <div id="left">
+            <div class="leftMenuTop">
+                @Html.TextBox("UserName","",new{@placeholder="UserName",@class="textbox"})
+                @Html.Password("UserName","",new{@class="textbox"})
+                <input class="submitSignin" type="submit" value="Sign in"/>
+             </div>
+             @{Html.RenderAction("_TopicBookPartial", "Home");}
+       </div>
+          <div id="right">
+              <div id="rightContain">
+                @RenderBody()
+              </div>
+        </div>
+      
+
+</div>
+    <footer class="footer">NgaLT@fsoft.com </footer>
+
+ </div>
+ </body>       
+  </html>

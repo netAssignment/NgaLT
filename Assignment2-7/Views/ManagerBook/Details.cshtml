@@ -1,0 +1,51 @@
+﻿@model Assignment2_7.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Book</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BookName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BookName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Discription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Discription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Image)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.TopicName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.TopicName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author.AuthorName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author.AuthorName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BookID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

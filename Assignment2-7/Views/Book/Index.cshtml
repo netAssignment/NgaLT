@@ -1,0 +1,32 @@
+﻿@model List<Assignment2_7.Models.Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+    
+}
+
+<div class="titleIndex">
+      @ViewBag.topicname
+ </div>
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+
+
+     @foreach(var book in Model)
+     {
+          <div class="border">
+         <div class="titleBook">
+            @Html.ActionLink(book.BookName,"","")
+         </div>
+         <div class="content">
+         	    Default sẽ show ra tất cả sách (category “All”) theo tứ tự ngày phát hành.
+         	    Người dùng có thể chọn Category ở cột bên trái, sách thuộc category đó sẽ được 
+             <div class="right">
+                 <p><b>Tác Giả :@book.Author.AuthorName </b>
+                 <p><b>Ngày phát hành : </b>@DateTime.Now <br /></p>
+             </div>
+         </div>
+     </div>
+     }
+    
+  
